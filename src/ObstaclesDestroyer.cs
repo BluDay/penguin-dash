@@ -15,9 +15,9 @@ public class ObstaclesDestroyer : MonoBehaviour
     public GameObject regDes;
     public GameObject longDes;
 
-	// Collision is called by hit.
-	void OnCollisionEnter2D(Collision2D col)
-	{
+    // Collision is called by hit.
+    void OnCollisionEnter2D(Collision2D col)
+    {
         // Long Destroyer
         if (longDestroyer)
         {
@@ -67,12 +67,12 @@ public class ObstaclesDestroyer : MonoBehaviour
                 DestroyObject(col.gameObject);
             }
         }
-	}
+    }
 
-	// Update is called once per frame
-	void Update () 
-	{
-		longDes.transform.position = new Vector2(-75f, 20f);
+    // Update is called once per frame
+    void Update () 
+    {
+        longDes.transform.position = new Vector2(-75f, 20f);
         regDes.transform.position = new Vector2(-15f, 20f);
     }
 }

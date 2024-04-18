@@ -10,50 +10,50 @@ using UnityEngine.EventSystems;
 public class PenguinChange : MonoBehaviour 
 {
     // Variables
-	public bool NLocked, 
-	    CLocked, GLocked, ALocked, 
-	    PLocked, AsLocked, FLocked,
-	    VLocked, BaPLocked, PuPLocked,
+    public bool NLocked, 
+        CLocked, GLocked, ALocked, 
+        PLocked, AsLocked, FLocked,
+        VLocked, BaPLocked, PuPLocked,
         TPLocked;
 
-	public bool BluePenguinS, ZombiePenguinS,
-	    SkaterPenguinS, HackerPenguinS, NinjaPenguinS,
-	    ClownPenguinS, GoldenPenguinS, AlienPenguinS,
-	    PiratePenguinS, AstronautPenguinS, VampirePenguinS,
-	    FrostyPenguinS, BlueAlienPenguinS, PumpkinPenguinS,
+    public bool BluePenguinS, ZombiePenguinS,
+        SkaterPenguinS, HackerPenguinS, NinjaPenguinS,
+        ClownPenguinS, GoldenPenguinS, AlienPenguinS,
+        PiratePenguinS, AstronautPenguinS, VampirePenguinS,
+        FrostyPenguinS, BlueAlienPenguinS, PumpkinPenguinS,
         ThunderPenguinS;
 
-	private float c1 = 0.23f;
-	private float c2 = 0.365f;
-	private float c3 = 0.5f;
-	private float c4 = 0.635f;
-	private float c5 = 0.77f;
+    private float c1 = 0.23f;
+    private float c2 = 0.365f;
+    private float c3 = 0.5f;
+    private float c4 = 0.635f;
+    private float c5 = 0.77f;
 
-	public GUITexture unlockPenguins, hideBtn, blackRect;
+    public GUITexture unlockPenguins, hideBtn, blackRect;
 
     public GUITexture BP, SP, ZP, HP, NP, CP, GP, AP, 
         PP, AsP, FP, VP, BaP, PuP, TP;
 
-	public GUITexture NPText, CPText, 
-	    GPText, APText, PPText, AsPText, FPText, VPText, BaPText,
+    public GUITexture NPText, CPText, 
+        GPText, APText, PPText, AsPText, FPText, VPText, BaPText,
         PuPText, TPText;
 
-	public GUITexture NLockedIcon, CLockedIcon, GLockedIcon,
-	    ALockedIcon, PLockedIcon, AsLockedIcon, FLockedIcon, 
+    public GUITexture NLockedIcon, CLockedIcon, GLockedIcon,
+        ALockedIcon, PLockedIcon, AsLockedIcon, FLockedIcon, 
         VLockedIcon, BaPLockedIcon, PuPLockedIcon, TPLockedIcon;
 
-	public Texture2D NPu, CPu, GPu, APu, PPu, AsPu, FPu, 
+    public Texture2D NPu, CPu, GPu, APu, PPu, AsPu, FPu, 
         VPu, BaPu, PuPu, TPu, locked;
 
     public Transform charGrid;
 
     public GameObject menu;
 
-	// Use this for initialization
-	public void Start() 
-	{
-		// Intializing the scene!
-		Time.timeScale = 1;
+    // Use this for initialization
+    public void Start() 
+    {
+        // Intializing the scene!
+        Time.timeScale = 1;
 
         // BluDay Games
         var CharUnlockedBDG = PlayerPrefs.GetString("UnlockedBDG");
@@ -87,18 +87,18 @@ public class PenguinChange : MonoBehaviour
 
         // Facebook.
         var CharUnlockedFB = PlayerPrefs.GetString("UnlockedFB");
-		if (CharUnlockedFB != null)
-		{
-			if (CharUnlockedFB == "Ninja Penguin")
-			{
-				NLocked = false;
-				NP.color = new Color32(128, 128, 128, 255);
-				NPText.transform.localScale = new Vector3(1f, NPText.transform.localScale.y, 
+        if (CharUnlockedFB != null)
+        {
+            if (CharUnlockedFB == "Ninja Penguin")
+            {
+                NLocked = false;
+                NP.color = new Color32(128, 128, 128, 255);
+                NPText.transform.localScale = new Vector3(1f, NPText.transform.localScale.y, 
                     NPText.transform.localScale.z);
-				NPText.GetComponent<GUITexture>().texture = NPu;
+                NPText.GetComponent<GUITexture>().texture = NPu;
                 PlayerPrefs.Save();
-			}
-		}
+            }
+        }
         else
         {
             NLocked = true;
@@ -107,140 +107,140 @@ public class PenguinChange : MonoBehaviour
 
         // Twitter Penguin.
         var CharUnlockedT = PlayerPrefs.GetString("UnlockedT");
-		if (CharUnlockedT != null)
-		{
-			if (CharUnlockedT == "Clown Penguin")
-			{
-				CLocked = false;
-				CP.color = new Color32(128, 128, 128, 255);
-				CPText.transform.localScale = new Vector3(1f, CPText.transform.localScale.y, 
+        if (CharUnlockedT != null)
+        {
+            if (CharUnlockedT == "Clown Penguin")
+            {
+                CLocked = false;
+                CP.color = new Color32(128, 128, 128, 255);
+                CPText.transform.localScale = new Vector3(1f, CPText.transform.localScale.y, 
                     CPText.transform.localScale.z);
-				CPText.GetComponent<GUITexture>().texture = CPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				CLocked = true;
-				CP.color = Color.black;
-			}
-		}
+                CPText.GetComponent<GUITexture>().texture = CPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                CLocked = true;
+                CP.color = Color.black;
+            }
+        }
 
         // Level 1
         var CharUnlockedLevel1 = PlayerPrefs.GetString("Level1");
-		if (CharUnlockedLevel1 != null)
-		{
-			if (CharUnlockedLevel1 == "Level1Completed")
-			{
-				FLocked = false;
-				FP.color = new Color32(128, 128, 128, 255);
-				FPText.transform.localScale = new Vector3(1f, FPText.transform.localScale.y, 
+        if (CharUnlockedLevel1 != null)
+        {
+            if (CharUnlockedLevel1 == "Level1Completed")
+            {
+                FLocked = false;
+                FP.color = new Color32(128, 128, 128, 255);
+                FPText.transform.localScale = new Vector3(1f, FPText.transform.localScale.y, 
                     FPText.transform.localScale.z);
-				FPText.GetComponent<GUITexture>().texture = FPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				FLocked = true;
-				FP.color = Color.black;
-			}
-		}
+                FPText.GetComponent<GUITexture>().texture = FPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                FLocked = true;
+                FP.color = Color.black;
+            }
+        }
 
-		// Level 2
-		var CharUnlockedLevel2 = PlayerPrefs.GetString("Level2");
-		if (CharUnlockedLevel2 != null)
-		{
-			if (CharUnlockedLevel2 == "Level2Completed")
-			{
-				GLocked = false;
-				GP.color = new Color32(128, 128, 128, 255);
-				GPText.transform.localScale = new Vector3(1f, GPText.transform.localScale.y, 
+        // Level 2
+        var CharUnlockedLevel2 = PlayerPrefs.GetString("Level2");
+        if (CharUnlockedLevel2 != null)
+        {
+            if (CharUnlockedLevel2 == "Level2Completed")
+            {
+                GLocked = false;
+                GP.color = new Color32(128, 128, 128, 255);
+                GPText.transform.localScale = new Vector3(1f, GPText.transform.localScale.y, 
                     GPText.transform.localScale.z);
-				GPText.GetComponent<GUITexture>().texture = GPu;
-				PlayerPrefs.Save();
+                GPText.GetComponent<GUITexture>().texture = GPu;
+                PlayerPrefs.Save();
 
-				PLocked = false;
-				PP.color = new Color32(128, 128, 128, 255);
-				PPText.transform.localScale = new Vector3(1f, PPText.transform.localScale.y, 
+                PLocked = false;
+                PP.color = new Color32(128, 128, 128, 255);
+                PPText.transform.localScale = new Vector3(1f, PPText.transform.localScale.y, 
                     PPText.transform.localScale.z);
-				PPText.GetComponent<GUITexture>().texture = PPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				GLocked = true;
-				GP.color = Color.black;
+                PPText.GetComponent<GUITexture>().texture = PPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                GLocked = true;
+                GP.color = Color.black;
 
-				PLocked = true;
-				PP.color = Color.black;
-			}
-		}
+                PLocked = true;
+                PP.color = Color.black;
+            }
+        }
 
-		// Level 3
-		var CharUnlockedLevel3 = PlayerPrefs.GetString("Level3");
-		if (CharUnlockedLevel3 != null)
-		{
-			if (CharUnlockedLevel3 == "Level3Completed")
-			{
-				ALocked = false;
-				AP.color = new Color32(128, 128, 128, 255);
-				APText.transform.localScale = new Vector3(1f, APText.transform.localScale.y, 
+        // Level 3
+        var CharUnlockedLevel3 = PlayerPrefs.GetString("Level3");
+        if (CharUnlockedLevel3 != null)
+        {
+            if (CharUnlockedLevel3 == "Level3Completed")
+            {
+                ALocked = false;
+                AP.color = new Color32(128, 128, 128, 255);
+                APText.transform.localScale = new Vector3(1f, APText.transform.localScale.y, 
                     APText.transform.localScale.z);
-				APText.GetComponent<GUITexture>().texture = APu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				ALocked = true;
-				AP.color = Color.black;
-			}
-		}
+                APText.GetComponent<GUITexture>().texture = APu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                ALocked = true;
+                AP.color = Color.black;
+            }
+        }
 
-		// Level 4 Astronaut Penguin.
-		var CharUnlockedLevel4 = PlayerPrefs.GetString("Level4");
-		if (CharUnlockedLevel4 != null)
-		{
-			if (CharUnlockedLevel4 == "Level4Completed")
-			{
-				AsLocked = false;
-				AsP.color = new Color32(128, 128, 128, 255);
-				AsPText.transform.localScale = new Vector3(1f, PPText.transform.localScale.y, 
+        // Level 4 Astronaut Penguin.
+        var CharUnlockedLevel4 = PlayerPrefs.GetString("Level4");
+        if (CharUnlockedLevel4 != null)
+        {
+            if (CharUnlockedLevel4 == "Level4Completed")
+            {
+                AsLocked = false;
+                AsP.color = new Color32(128, 128, 128, 255);
+                AsPText.transform.localScale = new Vector3(1f, PPText.transform.localScale.y, 
                     PPText.transform.localScale.z);
-				AsPText.GetComponent<GUITexture>().texture = AsPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				AsLocked = true;
-				AsP.color = Color.black;
-			}
-		}
+                AsPText.GetComponent<GUITexture>().texture = AsPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                AsLocked = true;
+                AsP.color = Color.black;
+            }
+        }
 
-		// Level 5 Vampire Penguin.
-		var CharUnlockedLevel5 = PlayerPrefs.GetString("Level5");
-		if (CharUnlockedLevel5 != null)
-		{
-			if (CharUnlockedLevel5 == "Level5Completed")
-			{
-				VLocked = false;
-				VP.color = new Color32(128, 128, 128, 255);
-				VPText.transform.localScale = new Vector3(1f, VPText.transform.localScale.y, 
+        // Level 5 Vampire Penguin.
+        var CharUnlockedLevel5 = PlayerPrefs.GetString("Level5");
+        if (CharUnlockedLevel5 != null)
+        {
+            if (CharUnlockedLevel5 == "Level5Completed")
+            {
+                VLocked = false;
+                VP.color = new Color32(128, 128, 128, 255);
+                VPText.transform.localScale = new Vector3(1f, VPText.transform.localScale.y, 
                     VPText.transform.localScale.z);
-				VPText.GetComponent<GUITexture>().texture = VPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				VLocked = true;
-				VP.color = Color.black;
-			}
-		}
+                VPText.GetComponent<GUITexture>().texture = VPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                VLocked = true;
+                VP.color = Color.black;
+            }
+        }
 
-		// Level 5 Blue Alien Penguin.
-		var CharUnlockedLevel6 = PlayerPrefs.GetString("Level6");
-		if (CharUnlockedLevel6 != null)
-		{
-			if (CharUnlockedLevel6 == "Level6Completed")
-			{
+        // Level 5 Blue Alien Penguin.
+        var CharUnlockedLevel6 = PlayerPrefs.GetString("Level6");
+        if (CharUnlockedLevel6 != null)
+        {
+            if (CharUnlockedLevel6 == "Level6Completed")
+            {
                 TPLocked = false;
                 TP.color = new Color32(128, 128, 128, 255);
                 TPText.transform.position = new Vector3(TPText.transform.position.x,
@@ -252,96 +252,96 @@ public class PenguinChange : MonoBehaviour
                 TPText.GetComponent<GUITexture>().texture = TPu;
 
                 BaPLocked = false;
-				BaP.color = new Color32(128, 128, 128, 255);
+                BaP.color = new Color32(128, 128, 128, 255);
                 BaPText.transform.position = new Vector3(BaPText.transform.position.x, 
                     BaPText.transform.position.y, BaPText.transform.position.z);
 
-				BaPText.transform.localScale = new Vector3(0.75f, 0.225f, 
+                BaPText.transform.localScale = new Vector3(0.75f, 0.225f, 
                     BaPText.transform.localScale.z);
 
-				BaPText.GetComponent<GUITexture>().texture = BaPu;
-				PlayerPrefs.Save();
-			}
-			else
-			{
-				BaPLocked = true;
-				BaP.color = Color.black;
+                BaPText.GetComponent<GUITexture>().texture = BaPu;
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                BaPLocked = true;
+                BaP.color = Color.black;
 
                 TPLocked = true;
                 TP.color = Color.black;
             }
-		}
+        }
 
 
         // Regular Penguins.
         var SavedPenguin = PlayerPrefs.GetString("PenguinChanger");
-		if (SavedPenguin != null)
-		{
-			if (SavedPenguin == "BluePenguin")
-			{
-				BluePenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "ZombiePenguin")
-			{
-				ZombiePenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "SkaterPenguin")
-			{
-				SkaterPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "HackerPenguin")
-			{
-				HackerPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "NinjaPenguin")
-			{
-				NinjaPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "ClownPenguin")
-			{
-				ClownPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "AlienPenguin")
-			{
-				AlienPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "GoldenPenguin")
-			{
-				GoldenPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "PiratePenguin")
-			{
-				PiratePenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "AstronautPenguin")
-			{
-				AstronautPenguinS = true;
-				PlayerPrefs.Save();
-			}
-				if (SavedPenguin == "FrostyPenguin")
-			{
-				FrostyPenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "VampirePenguin")
-			{
-				VampirePenguinS = true;
-				PlayerPrefs.Save();
-			}
-			if (SavedPenguin == "BlueAlienPenguin")
-			{
-				BlueAlienPenguinS = true;
-				PlayerPrefs.Save();
-			}
+        if (SavedPenguin != null)
+        {
+            if (SavedPenguin == "BluePenguin")
+            {
+                BluePenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "ZombiePenguin")
+            {
+                ZombiePenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "SkaterPenguin")
+            {
+                SkaterPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "HackerPenguin")
+            {
+                HackerPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "NinjaPenguin")
+            {
+                NinjaPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "ClownPenguin")
+            {
+                ClownPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "AlienPenguin")
+            {
+                AlienPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "GoldenPenguin")
+            {
+                GoldenPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "PiratePenguin")
+            {
+                PiratePenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "AstronautPenguin")
+            {
+                AstronautPenguinS = true;
+                PlayerPrefs.Save();
+            }
+                if (SavedPenguin == "FrostyPenguin")
+            {
+                FrostyPenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "VampirePenguin")
+            {
+                VampirePenguinS = true;
+                PlayerPrefs.Save();
+            }
+            if (SavedPenguin == "BlueAlienPenguin")
+            {
+                BlueAlienPenguinS = true;
+                PlayerPrefs.Save();
+            }
             if (SavedPenguin == "PumpkinPenguin")
             {
                 PumpkinPenguinS = true;
@@ -353,32 +353,32 @@ public class PenguinChange : MonoBehaviour
                 PlayerPrefs.Save();
             }
         }
-		else if (SavedPenguin == null)
-		{
+        else if (SavedPenguin == null)
+        {
             SavedPenguin = "Blue Penguin";
-		}
-	}
+        }
+    }
 
-	// Save
-	public void Save(string penguin)
-	{
-		PlayerPrefs.SetString("PenguinChanger", penguin);
-		PlayerPrefs.Save();
-		print(penguin);
-	}
+    // Save
+    public void Save(string penguin)
+    {
+        PlayerPrefs.SetString("PenguinChanger", penguin);
+        PlayerPrefs.Save();
+        print(penguin);
+    }
 
-	// Update is called once per frame
-	public void Update() 
-	{
-		// Tocuh settings.
-		if (Input.touchCount > 0)
-		{
-			for (int i = 0; i < Input.touchCount; i++)
-			{
-				Touch t = Input.GetTouch(i);
-				print(t);
-			}
-		}
+    // Update is called once per frame
+    public void Update() 
+    {
+        // Tocuh settings.
+        if (Input.touchCount > 0)
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch t = Input.GetTouch(i);
+                print(t);
+            }
+        }
 
         Vector2 charGridDisap = new Vector2(-4f, 4f);
 
@@ -399,111 +399,111 @@ public class PenguinChange : MonoBehaviour
         //
         /// Ninja Penguin.
         if (NLocked == true)
-		{
-			NLockedIcon.transform.position = new Vector3(c5, NLockedIcon.transform.position.y,
+        {
+            NLockedIcon.transform.position = new Vector3(c5, NLockedIcon.transform.position.y,
                 NLockedIcon.transform.position.z);
-		}
-		else
-		{
-			NLockedIcon.transform.position = new Vector3(-2, NLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            NLockedIcon.transform.position = new Vector3(-2, NLockedIcon.transform.position.y, 
                 NLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Clown Penguin.
+        /// Clown Penguin.
         if (CLocked == true)
-		{
-			CLockedIcon.transform.position = new Vector3(c1, CLockedIcon.transform.position.y, 
+        {
+            CLockedIcon.transform.position = new Vector3(c1, CLockedIcon.transform.position.y, 
                 CLockedIcon.transform.position.z);
-		}
-		else
-		{
-			CLockedIcon.transform.position = new Vector3(-3, CLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            CLockedIcon.transform.position = new Vector3(-3, CLockedIcon.transform.position.y, 
                 CLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Golden Penguin.
-		if (GLocked == true)
-		{
-			GLockedIcon.transform.position = new Vector3(c3, GLockedIcon.transform.position.y,
+        /// Golden Penguin.
+        if (GLocked == true)
+        {
+            GLockedIcon.transform.position = new Vector3(c3, GLockedIcon.transform.position.y,
                 GLockedIcon.transform.position.z);
-		}
-		else
-		{
-			GLockedIcon.transform.position = new Vector3(-4, GLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            GLockedIcon.transform.position = new Vector3(-4, GLockedIcon.transform.position.y, 
                 GLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Alien Penguin.
-		if (ALocked == true)
-		{
-			ALockedIcon.transform.position = new Vector3(c2, ALockedIcon.transform.position.y,
+        /// Alien Penguin.
+        if (ALocked == true)
+        {
+            ALockedIcon.transform.position = new Vector3(c2, ALockedIcon.transform.position.y,
                 ALockedIcon.transform.position.z);
-		}
-		else
-		{
-			ALockedIcon.transform.position = new Vector3(-4, ALockedIcon.transform.position.y, 
+        }
+        else
+        {
+            ALockedIcon.transform.position = new Vector3(-4, ALockedIcon.transform.position.y, 
                 ALockedIcon.transform.position.z);
-		}
+        }
 
-		/// Pirate Penguin.
-		if (PLocked == true)
-		{
-			PLockedIcon.transform.position = new Vector3(c4, PLockedIcon.transform.position.y,
+        /// Pirate Penguin.
+        if (PLocked == true)
+        {
+            PLockedIcon.transform.position = new Vector3(c4, PLockedIcon.transform.position.y,
                 PLockedIcon.transform.position.z);
-		}
-		else
-		{
-			PLockedIcon.transform.position = new Vector3(-4, PLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            PLockedIcon.transform.position = new Vector3(-4, PLockedIcon.transform.position.y, 
                 PLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Astronaut Penguin.
-		if (AsLocked == true)
-		{
-			AsLockedIcon.transform.position = new Vector3(c5, AsLockedIcon.transform.position.y, 
+        /// Astronaut Penguin.
+        if (AsLocked == true)
+        {
+            AsLockedIcon.transform.position = new Vector3(c5, AsLockedIcon.transform.position.y, 
                 AsLockedIcon.transform.position.z);
-		}
-		else
-		{
-			AsLockedIcon.transform.position = new Vector3(-4, AsLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            AsLockedIcon.transform.position = new Vector3(-4, AsLockedIcon.transform.position.y, 
                 AsLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Frosty Penguin.
-		if (FLocked == true)
-		{
-			FLockedIcon.transform.position = new Vector3(c1, FLockedIcon.transform.position.y, 
+        /// Frosty Penguin.
+        if (FLocked == true)
+        {
+            FLockedIcon.transform.position = new Vector3(c1, FLockedIcon.transform.position.y, 
                 FLockedIcon.transform.position.z);
-		}
-		else
-		{
-			FLockedIcon.transform.position = new Vector3(-4, FLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            FLockedIcon.transform.position = new Vector3(-4, FLockedIcon.transform.position.y, 
                 FLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Vampire Penguin.
-		if (VLocked == true)
-		{
-			VLockedIcon.transform.position = new Vector3(c2, VLockedIcon.transform.position.y,
+        /// Vampire Penguin.
+        if (VLocked == true)
+        {
+            VLockedIcon.transform.position = new Vector3(c2, VLockedIcon.transform.position.y,
                 VLockedIcon.transform.position.z);
-		}
-		else
-		{
-			VLockedIcon.transform.position = new Vector3(-4, VLockedIcon.transform.position.y, 
+        }
+        else
+        {
+            VLockedIcon.transform.position = new Vector3(-4, VLockedIcon.transform.position.y, 
                 VLockedIcon.transform.position.z);
-		}
+        }
 
-		/// Blue Alien Penguin.
-		if (BaPLocked == true)
-		{
-			BaPLockedIcon.transform.position = new Vector3(c3, BaPLockedIcon.transform.position.y, 
+        /// Blue Alien Penguin.
+        if (BaPLocked == true)
+        {
+            BaPLockedIcon.transform.position = new Vector3(c3, BaPLockedIcon.transform.position.y, 
                 BaPLockedIcon.transform.position.z);
-		}
-		else
-		{
-			BaPLockedIcon.transform.position = new Vector3(-4, BaPLockedIcon.transform.position.y,
+        }
+        else
+        {
+            BaPLockedIcon.transform.position = new Vector3(-4, BaPLockedIcon.transform.position.y,
                 BaPLockedIcon.transform.position.z);
-		}
+        }
 
         /// Pumpkin Penguin
         if (PuPLocked == true)
@@ -534,53 +534,53 @@ public class PenguinChange : MonoBehaviour
 
         // Saving.
         if (BluePenguinS == true)
-		{
-			Save("BluePenguin");
-			BP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			BP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
-		}
+        {
+            Save("BluePenguin");
+            BP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            BP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        }
 
-		if (ZombiePenguinS == true)
-		{
-			Save("ZombiePenguin");
-			ZP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			ZP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
-		}
+        if (ZombiePenguinS == true)
+        {
+            Save("ZombiePenguin");
+            ZP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            ZP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        }
 
-		if (SkaterPenguinS == true)
-		{
-			Save("SkaterPenguin");
-			SP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			SP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
-		}
+        if (SkaterPenguinS == true)
+        {
+            Save("SkaterPenguin");
+            SP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            SP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        }
 
-		if (HackerPenguinS == true)
-		{
-			Save("HackerPenguin");
-			HP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			HP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
-		}
+        if (HackerPenguinS == true)
+        {
+            Save("HackerPenguin");
+            HP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            HP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        }
 
-		if (NinjaPenguinS)
-		{
-			Save("NinjaPenguin");
-			NP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			NP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (NinjaPenguinS)
+        {
+            Save("NinjaPenguin");
+            NP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            NP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (NLocked)
             {
                 NP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -597,14 +597,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (ClownPenguinS)
-		{
-			Save("ClownPenguin");
-			CP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			CP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (ClownPenguinS)
+        {
+            Save("ClownPenguin");
+            CP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            CP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (CLocked)
             {
                 CP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -621,14 +621,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (AlienPenguinS)
-		{
-			Save("AlienPenguin");
-			AP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			AP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (AlienPenguinS)
+        {
+            Save("AlienPenguin");
+            AP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            AP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (ALocked)
             {
                 AP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -646,14 +646,14 @@ public class PenguinChange : MonoBehaviour
         }
 
 
-		if (GoldenPenguinS)
-		{
-			Save("GoldenPenguin");
-			GP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			GP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (GoldenPenguinS)
+        {
+            Save("GoldenPenguin");
+            GP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            GP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (GLocked)
             {
                 GP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -670,14 +670,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (PiratePenguinS)
-		{
-			Save("PiratePenguin");
-			PP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			PP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (PiratePenguinS)
+        {
+            Save("PiratePenguin");
+            PP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            PP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (PLocked)
             {
                 PP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -694,14 +694,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (AstronautPenguinS)
-		{
-			Save("AstronautPenguin");
-			AsP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			AsP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (AstronautPenguinS)
+        {
+            Save("AstronautPenguin");
+            AsP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            AsP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (AsLocked)
             {
                 AsP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -718,14 +718,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (FrostyPenguinS)
-		{
-			Save("FrostyPenguin");
-			FP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			FP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (FrostyPenguinS)
+        {
+            Save("FrostyPenguin");
+            FP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            FP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (FLocked)
             {
                 FP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -742,14 +742,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (VampirePenguinS)
-		{
-			Save("VampirePenguin");
-			VP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			VP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (VampirePenguinS)
+        {
+            Save("VampirePenguin");
+            VP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            VP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (VLocked)
             {
                 VP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -766,14 +766,14 @@ public class PenguinChange : MonoBehaviour
             }
         }
 
-		if (BlueAlienPenguinS)
-		{
-			Save("BlueAlienPenguin");
-			BaP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
-		}
-		else
-		{
-			BaP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
+        if (BlueAlienPenguinS)
+        {
+            Save("BlueAlienPenguin");
+            BaP.GetComponent<GUITexture>().color = new Color32(200, 200, 200, 128);
+        }
+        else
+        {
+            BaP.GetComponent<GUITexture>().color = new Color32(128, 128, 128, 128);
             if (BaPLocked)
             {
                 BaP.GetComponent<GUITexture>().color = new Color32(0, 0, 0, 255);
@@ -839,41 +839,41 @@ public class PenguinChange : MonoBehaviour
 
         // On Touch
         if (Input.GetMouseButtonDown(0))
-		{
-			// Blue Penguin.
-			if (BP.HitTest(Input.mousePosition, Camera.main))
-			{
-				BluePenguinS = true;
-				SkaterPenguinS = ZombiePenguinS = HackerPenguinS = NinjaPenguinS = false;
-				ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
-				FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
+        {
+            // Blue Penguin.
+            if (BP.HitTest(Input.mousePosition, Camera.main))
+            {
+                BluePenguinS = true;
+                SkaterPenguinS = ZombiePenguinS = HackerPenguinS = NinjaPenguinS = false;
+                ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
+                FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
             }
 
-			// Zombie Penguin.
-			if (ZP.HitTest(Input.mousePosition, Camera.main))
-			{
-				ZombiePenguinS = true;
-				SkaterPenguinS = BluePenguinS = HackerPenguinS = NinjaPenguinS = false;
-				ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
-				FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
+            // Zombie Penguin.
+            if (ZP.HitTest(Input.mousePosition, Camera.main))
+            {
+                ZombiePenguinS = true;
+                SkaterPenguinS = BluePenguinS = HackerPenguinS = NinjaPenguinS = false;
+                ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
+                FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
             }
 
-			// Skater Penguin.
-			if (SP.HitTest(Input.mousePosition, Camera.main))
-			{
-				SkaterPenguinS = true;
-				BluePenguinS = ZombiePenguinS = HackerPenguinS = NinjaPenguinS = false;
-				ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
-				FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
+            // Skater Penguin.
+            if (SP.HitTest(Input.mousePosition, Camera.main))
+            {
+                SkaterPenguinS = true;
+                BluePenguinS = ZombiePenguinS = HackerPenguinS = NinjaPenguinS = false;
+                ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
+                FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
             }
 
-			//Hacker Penguin.
-			if (HP.HitTest(Input.mousePosition, Camera.main))
-			{
-				HackerPenguinS = true;
-				SkaterPenguinS = ZombiePenguinS = BluePenguinS = NinjaPenguinS = false;
-				ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
-				FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
+            //Hacker Penguin.
+            if (HP.HitTest(Input.mousePosition, Camera.main))
+            {
+                HackerPenguinS = true;
+                SkaterPenguinS = ZombiePenguinS = BluePenguinS = NinjaPenguinS = false;
+                ClownPenguinS = AlienPenguinS = GoldenPenguinS = PiratePenguinS = AstronautPenguinS = false;
+                FrostyPenguinS = VampirePenguinS = BlueAlienPenguinS = PumpkinPenguinS = ThunderPenguinS = false;
             }
 
 
@@ -1145,6 +1145,6 @@ public class PenguinChange : MonoBehaviour
                 }
             }
         }
-	}
+    }
 }
 

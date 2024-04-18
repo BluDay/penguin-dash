@@ -9,24 +9,24 @@ using System.Collections;
 public class ObjectMovement : MonoBehaviour 
 {
     // Classes
-	public float Movspeed;
-	public float timer = 0.0f;
+    public float Movspeed;
+    public float timer = 0.0f;
     public GameObject player;
     //public GameObject[] enviroment;
     PlayerSettings p;
 
-	// Use this for initialization
-	void Start() 
-	{
-		p = player.GetComponent<PlayerSettings>();
-	}
+    // Use this for initialization
+    void Start() 
+    {
+        p = player.GetComponent<PlayerSettings>();
+    }
 
-	// Update is called once per frame
-	void FixedUpdate() 
-	{
+    // Update is called once per frame
+    void FixedUpdate() 
+    {
         // Enemies Movment Speed.
         if (p.Dead == false)
-		{
+        {
             transform.Translate(Vector2.right * Movspeed * Time.deltaTime);
             //enviroment[0].transform.position = new Vector3(transform.position.x,
                                                            //enviroment[0].transform.position.y,
@@ -39,13 +39,13 @@ public class ObjectMovement : MonoBehaviour
                                                     player.transform.position.z);
 
         }
-		if (p.Dead == true)
-		{
-			Movspeed = 0;
-		}
-		if (p.End == true)
-		{
-			Movspeed = 0;
-		}
-	}
+        if (p.Dead == true)
+        {
+            Movspeed = 0;
+        }
+        if (p.End == true)
+        {
+            Movspeed = 0;
+        }
+    }
 }

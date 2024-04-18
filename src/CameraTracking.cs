@@ -8,27 +8,27 @@ using System.Collections;
 
 public class CameraTracking : MonoBehaviour
 {
-	// Variables
-	PlayerSettings p;
-	public GameObject player;
+    // Variables
+    PlayerSettings p;
+    public GameObject player;
     public GameObject ground;
     public GameObject SkyBackground;
     public GameObject OuterSpace;
     public Transform target;
-	public Vector3 velocity = Vector3.zero;
-	public float smoothTime;
+    public Vector3 velocity = Vector3.zero;
+    public float smoothTime;
     public float verticalMin;
     public bool verticalMinEnabled;
     private bool a16by9, a4by3, a3by2, 
     a16by10, a15by9, aspectUndetected;
 
-	void Start()
-	{
-		p = player.GetComponent<PlayerSettings>();
-	}
+    void Start()
+    {
+        p = player.GetComponent<PlayerSettings>();
+    }
 
-	void FixedUpdate() 
-	{
+    void FixedUpdate() 
+    {
 
         // Follows moving object without smooth damp.
         if (p.Dead == false)
@@ -147,12 +147,12 @@ public class CameraTracking : MonoBehaviour
         }
 
         if (target)
-		{
-			// Offset
-			Vector3 targetPosition = target.position;
-			targetPosition.z = transform.position.z;
+        {
+            // Offset
+            Vector3 targetPosition = target.position;
+            targetPosition.z = transform.position.z;
 
-			if (verticalMinEnabled)
+            if (verticalMinEnabled)
             { 
                 /// Aspect Ratio.
                 // 4:3
@@ -245,5 +245,5 @@ public class CameraTracking : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
         }
-	}
+    }
 }
